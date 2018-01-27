@@ -486,18 +486,20 @@
                 $span.addClass('placeholder').html(this.options.placeholder);
 
             // START / ADJUST  [SEARCH TAG 999]
-            } else if (this.options.allSelected && selectedPrefectures === this.$selectItems.length + this.$disableItems.length) {
+            } else if (this.options.allSelected && selectedPrefectures === (this.$selectItems.length - 1) + this.$disableItems.length) {
             // END / ADJUST  [SEARCH TAG 999]
 
             // START / ORIGINAL
             // } else if (this.options.allSelected && sl === this.$selectItems.length + this.$disableItems.length) {
             // END / ORIGINAL
-
+                // console.log('999');
                 $span.removeClass('placeholder').html(this.options.allSelected);
             } else if (this.options.ellipsis && sl > this.options.minimumCountSelected) {
+                // console.log('888');
                 $span.removeClass('placeholder').text(selects.slice(0, this.options.minimumCountSelected)
                     .join(this.options.delimiter) + '...');
             } else if (this.options.countSelected && sl > this.options.minimumCountSelected) {
+                // console.log('777');
                 $span.removeClass('placeholder').html(this.options.countSelected
 
                     // START / ADJUST  [SEARCH TAG 999]
@@ -508,8 +510,9 @@
                     // .replace('#', selects.length)
                     // END / ORIGINAL
 
-                    .replace('%', this.$selectItems.length + this.$disableItems.length));
+                    .replace('%', (this.$selectItems.length - 1) + this.$disableItems.length));
             } else {
+                // console.log('666');
                 $span.removeClass('placeholder').text(selects.join(this.options.delimiter));
             }
 
@@ -645,7 +648,7 @@
                 that.$selectItems.filter(sprintf('[value="%s"]', value)).prop('checked', true);
                 that.$disableItems.filter(sprintf('[value="%s"]', value)).prop('checked', true);
             });
-            this.$selectAll.prop('checked', this.$selectItems.length ===
+            this.$selectAll.prop('checked', (this.$selectItems.length - 1) ===
                 this.$selectItems.filter(':checked').length + this.$disableItems.filter(':checked').length);
 
             $.each(that.$selectGroups, function (i, val) {
