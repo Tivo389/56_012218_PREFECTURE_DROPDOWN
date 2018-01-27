@@ -19,7 +19,7 @@ $transition--lg: 1s;
 /*------------  xs < 768px (.container @ auto)  ------------*/
 // START OVERIDE
 option, span, label, optgroup {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 #multiselect-dd__container {
   margin-top: 60px;
@@ -62,9 +62,9 @@ option, span, label, optgroup {
         vertical-align: unset;
       }
       ul {
-        padding: 16px 22px;
+        padding: 10px 16px;
         li {
-          margin: 0 0 4px 0;
+          margin: 0 0 2px 0;
           &.ms-select-all label {
             font-weight: bolder;
           }
@@ -73,8 +73,8 @@ option, span, label, optgroup {
             content: '';
             display: block;
             height: 1px;
-            margin: 0 0 12px 0;
-            padding: 12px 0 0 0;
+            margin: 0 0 6px 0;
+            padding: 4px 0 0 0;
             width: 100%;
           }
         }
